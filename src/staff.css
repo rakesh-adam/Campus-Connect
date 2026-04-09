@@ -1,0 +1,122 @@
+.staff-wrapper {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.staff-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  position: relative;
+  z-index: 2;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.back-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  padding: 10px 20px;
+  background: #0066CC;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  z-index: 100;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.3);
+}
+
+.back-btn:hover {
+  background: #0052A3;
+  box-shadow: 0 4px 12px rgba(0, 102, 204, 0.5);
+  transform: translateX(-3px);
+}
+
+.page-title {
+  text-align: center;
+  color: #333;
+  margin-bottom: clamp(10px, 3vw, 50px);
+  font-size: clamp(24px, 7vw, 40px);
+  font-weight: 700;
+}
+
+.subtitle {
+  text-align: center;
+  color: #0C3B66;
+  margin-bottom: clamp(30px, 5vw, 50px);
+  font-size: clamp(14px, 4vw, 18px);
+}
+
+.staff-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 15px;
+  padding: 20px;
+}
+
+.staff-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: 0.3s;
+  border: 2px solid transparent;
+  display: flex;
+  flex-direction: column;
+}
+
+.staff-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  border-color: #0066CC;
+}
+
+.staff-image {
+  width: 100%;
+  height: 140px;
+  overflow: hidden;
+}
+
+.staff-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.staff-info {
+  padding: 10px;
+}
+
+.staff-name {
+  font-size: 14px;
+  font-weight: 700;
+  border-bottom: 2px solid #0066CC;
+  margin-bottom: 5px;
+}
+
+.staff-details p {
+  font-size: 11px;
+  margin: 2px 0;
+  color: #0C3B66;
+}
+
+.staff-details strong {
+  color: #001F3F;
+}
+
+.staff-details a {
+  color: #0066CC;
+  text-decoration: none;
+}
+
+.staff-details a:hover {
+  text-decoration: underline;
+}

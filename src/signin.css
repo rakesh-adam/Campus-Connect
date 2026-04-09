@@ -1,0 +1,19 @@
+
+.sign-in {
+  margin: clamp(8px, 2vw, 10px) 0;
+  color: #001F3F;
+  font-size: clamp(12px, 2.5vw, 16px);
+  text-align: center;
+}
+
+.sign-in a {
+  color: #0066CC;
+  margin-left: 5px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.sign-in a:hover {
+  text-decoration: underline;
+  color: #0052A3;
+}

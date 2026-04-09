@@ -1,0 +1,203 @@
+.raise-page {
+  background: linear-gradient(135deg, #E6F2F8 0%, #87CEEB 100%);
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+.back-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  padding: 10px 20px;
+  background: #0066CC;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  z-index: 100;
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  background: #0052A3;
+  transform: translateX(-3px);
+}
+
+.raise-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 12px 25px;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.raise-btn:hover {
+  background: #f44336;
+}
+
+.resolve-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 15px 30px;
+  background: #FF9800;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.resolve-btn:hover {
+  background: #F57C00;
+}
+
+.success-message {
+  position: fixed;
+  top: 80px;
+  right: 30px;
+  background: #4CAF50;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 5px;
+}
+
+.raise-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+.raise-container h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.no-complaints {
+  text-align: center;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.complaints-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.complaint-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  border-left: 5px solid #2196F3;
+}
+
+.complaint-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.status-badge {
+  padding: 5px 12px;
+  border-radius: 20px;
+  color: white;
+  font-size: 12px;
+}
+
+.complaint-description {
+  margin: 10px 0;
+}
+
+.complaint-meta {
+  display: flex;
+  gap: 20px;
+  font-size: 13px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.resolve-action-btn {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  cursor: pointer;
+}
+
+.reject-action-btn {
+  background: #f44336;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  cursor: pointer;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.submit-btn,
+.login-btn {
+  width: 100%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+}

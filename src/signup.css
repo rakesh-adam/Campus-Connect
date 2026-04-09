@@ -1,0 +1,124 @@
+
+.signup-wrapper {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #E6F2F8 0%, #87CEEB 100%);
+  padding: 20px;
+}
+
+.signup-wrapper .content {
+  width: 100%;
+  max-width: 330px;
+  padding: clamp(30px, 5vw, 40px) clamp(20px, 4vw, 30px);
+  background: #FFFFFF;
+  border-radius: 10px;
+  box-shadow: -3px -3px 7px rgba(0, 31, 63, 0.15),
+               2px 2px 5px rgba(135, 206, 235, 0.3);
+}
+
+.signup-wrapper .text {
+  font-size: clamp(24px, 6vw, 33px);
+  font-weight: 600;
+  margin-bottom: clamp(20px, 4vw, 35px);
+  color: #001F3F;
+}
+
+.field {
+  height: clamp(45px, 10vw, 50px);
+  width: 100%;
+  display: flex;
+  position: relative;
+  margin-top: clamp(15px, 3vw, 20px);
+  align-items: center;
+}
+
+.field:first-of-type {
+  margin-top: 0;
+}
+
+.input {
+  height: 100%;
+  width: 100%;
+  padding-left: clamp(45px, 8vw, 55px);
+  padding-right: clamp(10px, 2vw, 12px);
+  outline: none;
+  border: 2px solid #87CEEB;
+  font-size: clamp(14px, 3vw, 18px);
+  background: #F0F8FF;
+  color: #001F3F;
+  border-radius: 25px;
+  box-shadow: inset 2px 2px 5px rgba(135, 206, 235, 0.2),
+              inset -1px -1px 3px rgba(0, 31, 63, 0.1);
+}
+
+.input:focus {
+  border-color: #0066CC;
+}
+
+.span {
+  position: absolute;
+  left: clamp(12px, 2vw, 15px);
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.span svg {
+  width: clamp(18px, 4vw, 24px);
+  height: clamp(18px, 4vw, 24px);
+  fill: #0C3B66;
+}
+
+.label {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: clamp(45px, 8vw, 55px);
+  color: #0C3B66;
+  font-size: clamp(12px, 2.5vw, 14px);
+}
+
+.input:valid ~ .label {
+  opacity: 0;
+}
+
+.button {
+  margin: clamp(12px, 2vw, 15px) 0;
+  width: 100%;
+  height: clamp(45px, 10vw, 50px);
+  font-size: clamp(14px, 3vw, 18px);
+  font-weight: 600;
+  background: #0066CC;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  color: #FFFFFF;
+  transition: 0.3s;
+}
+
+.button:hover {
+  background: #0052A3;
+  transform: translateY(-2px);
+}
+
+.sign-up {
+  text-align: center;
+  font-size: clamp(12px, 2.5vw, 16px);
+  color: #001F3F;
+}
+
+.sign-up a {
+  color: #0066CC;
+  margin-left: 5px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.sign-up a:hover {
+  text-decoration: underline;
+}
+
+
