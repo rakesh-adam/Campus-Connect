@@ -3,6 +3,7 @@
   min-height: 100vh;
   width: 100%;
   overflow-x: hidden;
+  background: #1a1a2e;
 }
 
 .staff-container {
@@ -14,7 +15,7 @@
   border-radius: 10px;
   margin-top: 20px;
   margin-bottom: 20px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 212, 255, 0.2);
 }
 
 .back-btn {
@@ -42,46 +43,50 @@
 
 .page-title {
   text-align: center;
-  color: #333;
+  color: #00d4ff;
   margin-bottom: clamp(10px, 3vw, 50px);
   font-size: clamp(24px, 7vw, 40px);
   font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 212, 255, 0.2);
 }
 
 .subtitle {
   text-align: center;
-  color: #0C3B66;
+  color: #00d4ff;
   margin-bottom: clamp(30px, 5vw, 50px);
   font-size: clamp(14px, 4vw, 18px);
 }
 
 .staff-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
   gap: 15px;
   padding: 20px;
+  justify-content: center;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 .staff-card {
-  background: white;
+  background: rgba(0, 212, 255, 0.05);
   border-radius: 10px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 15px rgba(0, 212, 255, 0.2);
   overflow: hidden;
   transition: 0.3s;
-  border: 2px solid transparent;
+  border: 2px solid #00d4ff;
   display: flex;
   flex-direction: column;
 }
 
 .staff-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  border-color: #0066CC;
+  box-shadow: 0 10px 25px rgba(0, 212, 255, 0.35);
+  border-color: #00d4ff;
 }
 
 .staff-image {
   width: 100%;
-  height: 140px;
+  height: 220px;
   overflow: hidden;
 }
 
@@ -93,30 +98,33 @@
 
 .staff-info {
   padding: 10px;
+  background: rgba(0, 212, 255, 0.03);
 }
 
 .staff-name {
   font-size: 14px;
   font-weight: 700;
-  border-bottom: 2px solid #0066CC;
+  border-bottom: 2px solid #00d4ff;
   margin-bottom: 5px;
+  color: #00d4ff;
 }
 
 .staff-details p {
   font-size: 11px;
   margin: 2px 0;
-  color: #0C3B66;
+  color: #e0e0e0;
 }
 
 .staff-details strong {
-  color: #001F3F;
+  color: #00d4ff;
 }
 
 .staff-details a {
-  color: #0066CC;
+  color: #00d4ff;
   text-decoration: none;
 }
 
 .staff-details a:hover {
   text-decoration: underline;
+  color: #00b8d4;
 }

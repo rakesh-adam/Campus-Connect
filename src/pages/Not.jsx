@@ -335,7 +335,7 @@ const StyledWrapper = styled.div`
     max-width: 1400px;
     margin: 0 auto;
     padding: 40px 20px;
-    background: linear-gradient(135deg, #E6F2F8 0%, #87CEEB 100%);
+    background: #1a1a2e;
     min-height: 100vh;
   }
 
@@ -371,8 +371,8 @@ const StyledWrapper = styled.div`
     top: 20px;
     right: 20px;
     padding: clamp(10px, 2vw, 12px) clamp(15px, 3vw, 25px);
-    background: #4CAF50;
-    color: white;
+    background: #00d4ff;
+    color: #1a1a2e;
     border: none;
     border-radius: 5px;
     font-size: clamp(11px, 2vw, 14px);
@@ -380,12 +380,12 @@ const StyledWrapper = styled.div`
     cursor: pointer;
     z-index: 100;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
+    box-shadow: 0 2px 8px rgba(0, 212, 255, 0.3);
     white-space: nowrap;
 
     &:hover {
-      background: #45a049;
-      box-shadow: 0 4px 12px rgba(76, 175, 80, 0.5);
+      background: #00b8d4;
+      box-shadow: 0 4px 12px rgba(0, 212, 255, 0.5);
       transform: translateX(3px);
     }
 
@@ -398,8 +398,8 @@ const StyledWrapper = styled.div`
     position: fixed;
     top: clamp(60px, 10vw, 70px);
     right: clamp(15px, 3vw, 20px);
-    background: #4CAF50;
-    color: white;
+    background: #00d4ff;
+    color: #1a1a2e;
     padding: clamp(12px, 2vw, 15px) clamp(15px, 3vw, 25px);
     border-radius: 5px;
     font-weight: 600;
@@ -422,31 +422,32 @@ const StyledWrapper = styled.div`
 
   .page-title {
     text-align: center;
-    color: #333;
+    color: #00d4ff;
     margin-bottom: clamp(20px, 4vw, 30px);
     font-size: clamp(24px, 7vw, 40px);
     font-weight: 700;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    text-shadow: 2px 2px 4px rgba(0, 212, 255, 0.2);
   }
 
   .no-notifications {
     text-align: center;
-    color: #666;
+    color: #00d4ff;
     font-size: clamp(13px, 3vw, 16px);
     padding: clamp(20px, 3vw, 40px);
-    background: white;
+    background: rgba(0, 212, 255, 0.1);
+    border: 2px solid #00d4ff;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   }
 
   .notifications-section {
     margin-bottom: clamp(20px, 4vw, 30px);
 
     h2 {
-      color: #333;
+      color: #00d4ff;
       font-size: clamp(20px, 5vw, 28px);
       margin-bottom: clamp(12px, 2vw, 20px);
-      border-bottom: 3px solid #4CAF50;
+      border-bottom: 3px solid #00d4ff;
       padding-bottom: clamp(8px, 2vw, 10px);
     }
   }
@@ -458,15 +459,15 @@ const StyledWrapper = styled.div`
   }
 
   .notification-item {
-    background: white;
-    border-left: 5px solid #4CAF50;
+    background: rgba(0, 212, 255, 0.05);
+    border-left: 5px solid #00d4ff;
     border-radius: 8px;
     padding: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 212, 255, 0.2);
     transition: all 0.3s ease;
 
     &:hover {
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 6px 15px rgba(0, 212, 255, 0.3);
       transform: translateX(5px);
     }
   }
@@ -478,7 +479,7 @@ const StyledWrapper = styled.div`
     margin-bottom: 10px;
 
     h3 {
-      color: #333;
+      color: #00d4ff;
       font-size: 20px;
       margin: 0;
       font-weight: 700;
@@ -491,7 +492,7 @@ const StyledWrapper = styled.div`
   }
 
   .notif-description {
-    color: #555;
+    color: #e0e0e0;
     font-size: 14px;
     margin: 10px 0;
     line-height: 1.5;
@@ -499,34 +500,35 @@ const StyledWrapper = styled.div`
 
   .notif-file,
   .notif-staff {
-    color: #666;
+    color: #b0b0b0;
     font-size: 13px;
     margin: 5px 0;
 
     a {
-      color: #2196F3;
+      color: #00d4ff;
       text-decoration: none;
 
       &:hover {
         text-decoration: underline;
+        color: #00b8d4;
       }
     }
   }
 
   .file-link {
-    color: #2196F3;
+    color: #00d4ff;
     text-decoration: underline;
     cursor: pointer;
     font-weight: 600;
     transition: all 0.3s ease;
 
     &:hover {
-      color: #1976D2;
+      color: #00b8d4;
       font-weight: 700;
     }
 
     &:active {
-      color: #0d47a1;
+      color: #00a3b5;
     }
   }
 
@@ -545,17 +547,18 @@ const StyledWrapper = styled.div`
   }
 
   .modal-content {
-    background: white;
+    background: #1a1a2e;
     border-radius: 10px;
     padding: 30px;
     max-width: 500px;
     width: 90%;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
     position: relative;
     animation: slideUp 0.3s ease;
     display: flex;
     flex-direction: column;
     min-height: 500px;
+    border: 2px solid #00d4ff;
 
     @keyframes slideUp {
       from {
@@ -577,7 +580,7 @@ const StyledWrapper = styled.div`
     }
 
     h2 {
-      color: #333;
+      color: #00d4ff;
       font-size: 24px;
       margin: 0 0 25px 0;
       font-weight: 700;
@@ -586,14 +589,14 @@ const StyledWrapper = styled.div`
   }
 
   .file-name-display {
-    color: #555;
+    color: #00d4ff;
     font-size: 14px;
-    background: #f5f5f5;
+    background: rgba(0, 212, 255, 0.1);
     padding: 10px;
     border-radius: 5px;
     margin: 0 0 20px 0;
     word-break: break-word;
-    border-left: 4px solid #4CAF50;
+    border-left: 4px solid #00d4ff;
   }
 
   .file-options {
@@ -641,12 +644,12 @@ const StyledWrapper = styled.div`
     background: none;
     border: none;
     font-size: 28px;
-    color: #999;
+    color: #00d4ff;
     cursor: pointer;
     transition: color 0.3s ease;
 
     &:hover {
-      color: #333;
+      color: #00b8d4;
     }
   }
 
@@ -656,7 +659,7 @@ const StyledWrapper = styled.div`
 
     label {
       display: block;
-      color: #333;
+      color: #00d4ff;
       font-weight: 600;
       margin-bottom: 8px;
       font-size: 14px;
@@ -668,7 +671,9 @@ const StyledWrapper = styled.div`
     textarea {
       width: 100%;
       padding: 12px;
-      border: 1px solid #ddd;
+      border: 2px solid #00d4ff;
+      background: rgba(0, 212, 255, 0.05);
+      color: #e0e0e0;
       border-radius: 5px;
       font-size: 14px;
       font-family: inherit;
@@ -676,8 +681,12 @@ const StyledWrapper = styled.div`
 
       &:focus {
         outline: none;
-        border-color: #4CAF50;
-        box-shadow: 0 0 5px rgba(76, 175, 80, 0.2);
+        border-color: #00d4ff;
+        box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+      }
+
+      &::placeholder {
+        color: #808080;
       }
     }
 
@@ -699,7 +708,7 @@ const StyledWrapper = styled.div`
   }
 
   .file-name {
-    color: #4CAF50;
+    color: #00d4ff;
     font-size: 13px;
     margin-top: 8px;
     font-weight: 500;
@@ -716,7 +725,7 @@ const StyledWrapper = styled.div`
   .submit-btn {
     width: 100%;
     padding: clamp(10px, 2vw, 12px);
-    background: #17a40a;
+    background: #0066CC;
     color: white;
     border: none;
     border-radius: 5px;
@@ -727,8 +736,8 @@ const StyledWrapper = styled.div`
     margin-top: auto;
 
     &:hover {
-      background: #45a049;
-      box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+      background: #0052A3;
+      box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
       transform: translateY(-2px);
     }
 
@@ -745,17 +754,17 @@ const StyledWrapper = styled.div`
   }
 
   .staff-card {
-    background: white;
+    background: rgba(0, 212, 255, 0.05);
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
     overflow: hidden;
     transition: all 0.3s ease;
-    border: 2px solid transparent;
+    border: 2px solid #00d4ff;
 
     &:hover {
       transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
-      border-color: #4CAF50;
+      box-shadow: 0 20px 40px rgba(0, 212, 255, 0.35);
+      border-color: #00d4ff;
     }
   }
 
@@ -781,10 +790,10 @@ const StyledWrapper = styled.div`
 
   .staff-name {
     font-size: 22px;
-    color: #333;
+    color: #00d4ff;
     margin: 0 0 12px 0;
     font-weight: 700;
-    border-bottom: 3px solid #4CAF50;
+    border-bottom: 3px solid #00d4ff;
     padding-bottom: 8px;
   }
 
@@ -797,14 +806,14 @@ const StyledWrapper = styled.div`
   .staff-details p {
     margin: 0;
     font-size: 14px;
-    color: #555;
+    color: #b0b0b0;
     display: flex;
     justify-content: space-between;
     padding: 3px 0;
     line-height: 1.2;
 
     strong {
-      color: #333;
+      color: #00d4ff;
       font-weight: 600;
       min-width: 120px;
     }

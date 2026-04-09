@@ -1,7 +1,7 @@
 
 .time-wrapper {
   padding: clamp(15px, 3vw, 20px);
-  background: linear-gradient(135deg, #E6F2F8 0%, #87CEEB 100%);
+  background: #1a1a2e;
   min-height: 100vh;
 }
 
@@ -24,15 +24,16 @@
 .timetable-container {
   max-width: 1000px;
   margin: 30px auto;
-  background: #ffffff;
+  background: rgba(0, 212, 255, 0.05);
   padding: 30px;
   border-radius: 10px;
+  border: 2px solid #00d4ff;
 }
 
 .title {
   text-align: center;
   margin-bottom: 20px;
-  color: #001F3F;
+  color: #00d4ff;
 }
 
 .table-responsive {
@@ -53,18 +54,20 @@
 
 .timetable td {
   padding: 10px;
-  border: 1px solid #87CEEB;
+  border: 1px solid #00d4ff;
+  color: #e0e0e0;
 }
 
 .timetable tr:nth-child(even) {
-  background: #F0F8FF;
+  background: rgba(0, 212, 255, 0.08);
 }
 
 .timetable tr:hover {
-  background: #E6F2F8;
+  background: rgba(0, 212, 255, 0.15);
 }
 
 .day-cell {
   font-weight: bold;
-  background: #B0E0E6;
+  background: #0066CC;
+  color: white;
 }

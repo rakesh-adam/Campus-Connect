@@ -1,8 +1,8 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import SignUp from "./pages/SignUp";
-import SignIn from "./pages/SignIn";
+import Auth from "./pages/Auth";
 import Home from "./pages/Home";
 import Time from "./pages/Time";
+import Admin from "./pages/Admin";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useAuth } from "./context/AuthContext";
 import Not from "./pages/Not";
@@ -16,16 +16,17 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/signup" element={<SignUp />} />
-      <Route path="/signin" element={<SignIn />} />
+      <Route path="/signup" element={!user ? <Auth /> : <Navigate to="/home" />} />
+      <Route path="/signin" element={!user ? <Auth /> : <Navigate to="/home" />} />
+      <Route path="/admin" element={<Admin />} />
       <Route path="/home" element={user ? <Home /> : <Navigate to="/signin" />} />
       <Route path="/time" element={user ? <Time /> : <Navigate to="/signin" />} />
       <Route path="/not" element={user ? <Not /> : <Navigate to="/signin" />} />
       <Route path="/attend" element={user ? <Attend /> : <Navigate to="/signin" />} />
       <Route path="/staff" element={user ? <Staff /> : <Navigate to="/signin" />} />
-      <Route path="/raise" element={user ? <Raise/> : <Navigate to="/signin" />} />
-      <Route path="*" element={<Card/>} />
-      <Route path="/" element={<Navigate to="/signup" />} />
+      <Route path="/raise" element={user ? <Raise /> : <Navigate to="/signin" />} />
+      <Route path="*" element={<Card />} />
+      <Route path="/" element={<Navigate to={user ? "/home" : "/signin"} />} />
     </Routes>
   );
 }

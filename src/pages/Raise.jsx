@@ -113,13 +113,13 @@ const Raise = () => {
   const getStatusColor = (status) => {
     switch (status) {
       case 'Pending':
-        return '#FFC107';
+        return '#00d4ff';
       case 'Resolved':
-        return '#4CAF50';
+        return '#0066CC';
       case 'Rejected':
         return '#f44336';
       default:
-        return '#999';
+        return '#808080';
     }
   };
 
@@ -282,7 +282,7 @@ const Raise = () => {
 };
 
 const StyledWrapper = styled.div`
-  background: linear-gradient(135deg, #E6F2F8 0%, #87CEEB 100%);
+  background: #1a1a2e;
   min-height: 100vh;
   padding: 40px 20px;
 
@@ -315,8 +315,8 @@ const StyledWrapper = styled.div`
     top: 20px;
     right: 20px;
     padding: clamp(10px, 2vw, 12px) clamp(15px, 3vw, 25px);
-    background: #333;
-    color: white;
+    background: #00d4ff;
+    color: #1a1a2e;
     border: none;
     border-radius: 5px;
     font-size: clamp(11px, 2vw, 14px);
@@ -324,12 +324,12 @@ const StyledWrapper = styled.div`
     cursor: pointer;
     z-index: 100;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(51, 51, 51, 0.3);
+    box-shadow: 0 2px 8px rgba(0, 212, 255, 0.3);
     white-space: nowrap;
 
     &:hover {
-      background: #f44336;
-      box-shadow: 0 4px 12px rgba(244, 67, 54, 0.5);
+      background: #00b8d4;
+      box-shadow: 0 4px 12px rgba(0, 212, 255, 0.5);
       transform: translateY(-2px);
     }
 
@@ -343,7 +343,7 @@ const StyledWrapper = styled.div`
     bottom: clamp(20px, 3vw, 30px);
     right: clamp(20px, 3vw, 30px);
     padding: clamp(12px, 2vw, 15px) clamp(20px, 3vw, 30px);
-    background: #FF9800;
+    background: #0066CC;
     color: white;
     border: none;
     border-radius: 5px;
@@ -352,12 +352,12 @@ const StyledWrapper = styled.div`
     cursor: pointer;
     z-index: 100;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(255, 152, 0, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
     white-space: nowrap;
 
     &:hover {
-      background: #F57C00;
-      box-shadow: 0 6px 16px rgba(255, 152, 0, 0.5);
+      background: #0052A3;
+      box-shadow: 0 6px 16px rgba(0, 102, 204, 0.5);
       transform: translateY(-3px);
     }
 
@@ -370,8 +370,8 @@ const StyledWrapper = styled.div`
     position: fixed;
     top: 80px;
     right: 30px;
-    background: #4CAF50;
-    color: white;
+    background: #00d4ff;
+    color: #1a1a2e;
     padding: 15px 25px;
     border-radius: 5px;
     font-weight: 600;
@@ -398,20 +398,21 @@ const StyledWrapper = styled.div`
 
   h1 {
     text-align: center;
-    color: #333;
+    color: #00d4ff;
     font-size: clamp(24px, 7vw, 35px);
     margin-bottom: clamp(20px, 4vw, 40px);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    text-shadow: 2px 2px 4px rgba(0, 212, 255, 0.2);
   }
 
   .no-complaints {
     text-align: center;
-    color: #666;
+    color: #00d4ff;
     font-size: clamp(13px, 3vw, 16px);
     padding: clamp(20px, 3vw, 40px);
-    background: white;
+    background: rgba(0, 212, 255, 0.1);
+    border: 2px solid #00d4ff;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   }
 
   .complaints-list {
@@ -421,15 +422,15 @@ const StyledWrapper = styled.div`
   }
 
   .complaint-card {
-    background: white;
+    background: rgba(0, 212, 255, 0.05);
     border-radius: 10px;
     padding: clamp(15px, 3vw, 25px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
-    border-left: 5px solid #2196F3;
+    border-left: 5px solid #00d4ff;
 
     &:hover {
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 6px 20px rgba(0, 212, 255, 0.4);
       transform: translateY(-2px);
     }
   }
@@ -443,7 +444,7 @@ const StyledWrapper = styled.div`
     gap: 10px;
 
     h3 {
-      color: #333;
+      color: #00d4ff;
       font-size: clamp(16px, 4vw, 22px);
       margin: 0;
       flex: 1;
@@ -463,7 +464,7 @@ const StyledWrapper = styled.div`
   }
 
   .complaint-description {
-    color: #555;
+    color: #e0e0e0;
     font-size: clamp(13px, 2.5vw, 15px);
     line-height: 1.6;
     margin: clamp(10px, 2vw, 15px) 0;
@@ -475,15 +476,15 @@ const StyledWrapper = styled.div`
     gap: clamp(15px, 3vw, 30px);
     margin-top: clamp(10px, 2vw, 15px);
     padding-top: clamp(10px, 2vw, 15px);
-    border-top: 1px solid #eee;
+    border-top: 1px solid rgba(0, 212, 255, 0.2);
     flex-wrap: wrap;
 
     span {
-      color: #666;
+      color: #b0b0b0;
       font-size: clamp(11px, 2vw, 13px);
 
       strong {
-        color: #333;
+        color: #00d4ff;
         margin-right: 5px;
       }
     }
@@ -510,11 +511,11 @@ const StyledWrapper = styled.div`
   }
 
   .resolve-action-btn {
-    background: #4CAF50;
+    background: #0066CC;
     color: white;
 
     &:hover {
-      background: #45a049;
+      background: #0052A3;
       transform: translateY(-1px);
     }
   }
@@ -544,16 +545,17 @@ const StyledWrapper = styled.div`
   }
 
   .modal-content {
-    background: white;
+    background: #1a1a2e;
     border-radius: 10px;
     padding: clamp(20px, 4vw, 30px);
     max-width: 500px;
     width: 90%;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
     position: relative;
     animation: slideUp 0.3s ease;
     max-height: 90vh;
     overflow-y: auto;
+    border: 2px solid #00d4ff;
 
     @keyframes slideUp {
       from {
@@ -571,7 +573,7 @@ const StyledWrapper = styled.div`
     }
 
     h2 {
-      color: #333;
+      color: #00d4ff;
       font-size: clamp(18px, 5vw, 24px);
       margin: 0 0 clamp(15px, 3vw, 25px) 0;
       font-weight: 700;
@@ -585,12 +587,12 @@ const StyledWrapper = styled.div`
     background: none;
     border: none;
     font-size: clamp(20px, 5vw, 28px);
-    color: #999;
+    color: #00d4ff;
     cursor: pointer;
     transition: color 0.3s ease;
 
     &:hover {
-      color: #333;
+      color: #00b8d4;
     }
   }
 
@@ -599,7 +601,7 @@ const StyledWrapper = styled.div`
 
     label {
       display: block;
-      color: #333;
+      color: #00d4ff;
       font-weight: 600;
       margin-bottom: clamp(5px, 1vw, 8px);
       font-size: clamp(12px, 2vw, 14px);
@@ -610,7 +612,9 @@ const StyledWrapper = styled.div`
     select {
       width: 100%;
       padding: clamp(10px, 2vw, 12px);
-      border: 1px solid #ddd;
+      border: 2px solid #00d4ff;
+      background: rgba(0, 212, 255, 0.05);
+      color: #e0e0e0;
       border-radius: 5px;
       font-size: clamp(12px, 2vw, 14px);
       font-family: inherit;
@@ -619,8 +623,12 @@ const StyledWrapper = styled.div`
 
       &:focus {
         outline: none;
-        border-color: #2196F3;
-        box-shadow: 0 0 5px rgba(33, 150, 243, 0.2);
+        border-color: #00d4ff;
+        box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+      }
+
+      &::placeholder {
+        color: #808080;
       }
     }
 
@@ -631,7 +639,6 @@ const StyledWrapper = styled.div`
 
     select {
       cursor: pointer;
-      background: white;
     }
   }
 
@@ -646,7 +653,7 @@ const StyledWrapper = styled.div`
   .login-btn {
     width: 100%;
     padding: clamp(10px, 2vw, 12px);
-    background: #2196F3;
+    background: #0066CC;
     color: white;
     border: none;
     border-radius: 5px;
@@ -656,8 +663,8 @@ const StyledWrapper = styled.div`
     transition: all 0.3s ease;
 
     &:hover {
-      background: #1976D2;
-      box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+      background: #0052A3;
+      box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
     }
 
     &:active {
