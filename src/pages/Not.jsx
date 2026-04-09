@@ -553,6 +553,9 @@ const StyledWrapper = styled.div`
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
     position: relative;
     animation: slideUp 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    min-height: 500px;
 
     @keyframes slideUp {
       from {
@@ -578,6 +581,7 @@ const StyledWrapper = styled.div`
       font-size: 24px;
       margin: 0 0 25px 0;
       font-weight: 700;
+      flex-shrink: 0;
     }
   }
 
@@ -648,6 +652,7 @@ const StyledWrapper = styled.div`
 
   .form-group {
     margin-bottom: 20px;
+    flex-shrink: 0;
 
     label {
       display: block;
@@ -686,6 +691,13 @@ const StyledWrapper = styled.div`
     }
   }
 
+  .modal-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+  }
+
   .file-name {
     color: #4CAF50;
     font-size: 13px;
@@ -703,19 +715,21 @@ const StyledWrapper = styled.div`
   .login-btn,
   .submit-btn {
     width: 100%;
-    padding: 12px;
-    background: #4CAF50;
+    padding: clamp(10px, 2vw, 12px);
+    background: #17a40a;
     color: white;
     border: none;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: clamp(13px, 2.5vw, 16px);
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
+    margin-top: auto;
 
     &:hover {
       background: #45a049;
       box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+      transform: translateY(-2px);
     }
 
     &:active {
