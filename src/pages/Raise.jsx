@@ -159,32 +159,43 @@ const Raise = () => {
       {/* Complaint Modal */}
       {showComplaintForm && (
         <div className="modal-overlay">
-          <div className="modal-content">
-            <button onClick={() => setShowComplaintForm(false)}>×</button>
+          <div className="modal-content complaint-modal">
+            <button className="close-btn" onClick={() => setShowComplaintForm(false)}>×</button>
             <h2>Raise Complaint</h2>
 
             <form onSubmit={handleSubmitComplaint}>
-              <input
-                name="title"
-                value={complaintForm.title}
-                onChange={handleComplaintChange}
-                placeholder="Title"
-              />
-              <textarea
-                name="description"
-                value={complaintForm.description}
-                onChange={handleComplaintChange}
-                placeholder="Description"
-              />
-              <select
-                name="branch"
-                value={complaintForm.branch}
-                onChange={handleComplaintChange}
-              >
-                {branches.map(b => <option key={b}>{b}</option>)}
-              </select>
+              <div className="form-group">
+                <label>Complaint Title</label>
+                <input
+                  name="title"
+                  value={complaintForm.title}
+                  onChange={handleComplaintChange}
+                  placeholder="Title"
+                  required
+                />
+              </div>
+              <div className="form-group">
+                <label>Description</label>
+                <textarea
+                  name="description"
+                  value={complaintForm.description}
+                  onChange={handleComplaintChange}
+                  placeholder="Description"
+                  required
+                />
+              </div>
+              <div className="form-group">
+                <label>Branch</label>
+                <select
+                  name="branch"
+                  value={complaintForm.branch}
+                  onChange={handleComplaintChange}
+                >
+                  {branches.map(b => <option key={b}>{b}</option>)}
+                </select>
+              </div>
 
-              <button type="submit">Submit</button>
+              <button type="submit" className="submit-btn1">Submit</button>
             </form>
           </div>
         </div>
@@ -193,8 +204,8 @@ const Raise = () => {
       {/* Staff Login */}
       {showStaffLogin && (
         <div className="modal-overlay">
-          <div className="modal-content">
-            <button onClick={() => setShowStaffLogin(false)}>×</button>
+          <div className="modal-content complaint-modal">
+            <button className="close-btn" onClick={() => setShowStaffLogin(false)}>×</button>
             <h2>Staff Login</h2>
 
             <form onSubmit={handleStaffLogin}>
@@ -212,9 +223,9 @@ const Raise = () => {
                 }
               />
 
-              {loginError && <p>{loginError}</p>}
+              {loginError && <p className="error-message">{loginError}</p>}
 
-              <button type="submit">Login</button>
+              <button type="submit" className="login-btn">Login</button>
             </form>
           </div>
         </div>
@@ -495,6 +506,9 @@ const StyledWrapper = styled.div`
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
     position: relative;
     animation: slideUp 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    min-height: 500px;
     max-height: 90vh;
     overflow-y: auto;
     border: 2px solid #00d4ff;
@@ -581,6 +595,20 @@ const StyledWrapper = styled.div`
 
     select {
       cursor: pointer;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-image: linear-gradient(45deg, transparent 50%, #00d4ff 50%), linear-gradient(135deg, #00d4ff 50%, transparent 50%), linear-gradient(to right, rgba(0, 212, 255, 0.05), rgba(0, 212, 255, 0.05));
+      background-position: calc(100% - 18px) calc(1em + 2px), calc(100% - 13px) calc(1em + 2px), 0 0;
+      background-size: 5px 5px, 5px 5px, 100% 100%;
+      background-repeat: no-repeat;
+      padding-right: clamp(34px, 5vw, 40px);
+    }
+
+    select option {
+      background: #1a1a2e;
+      color: #e0e0e0;
+      font-size: clamp(12px, 1.5vw, 14px);
     }
   }
 
