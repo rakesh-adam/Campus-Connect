@@ -1,6 +1,3 @@
-/* ====== ATTENDANCE PAGE STYLING ====== */
-/* Dark Navy Blue (#1a1a2e) & Skyblue (#00d4ff) Theme */
-
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -480,9 +477,7 @@
   text-shadow: 0 0 10px rgba(255, 82, 82, 0.3);
 }
 
-/* ====== RESPONSIVE DESIGN ====== */
 
-/* Large Screens (1400px+) */
 @media (min-width: 1400px) {
   .attendance-container {
     padding: 40px;
@@ -509,7 +504,6 @@
   }
 }
 
-/* Extra-Large Screens (1200px - 1399px) */
 @media (min-width: 1200px) and (max-width: 1399px) {
   .attendance-container {
     padding: 35px;
@@ -525,7 +519,6 @@
   }
 }
 
-/* Large Tablets (1024px - 1199px) */
 @media (min-width: 1024px) and (max-width: 1199px) {
   .attendance-container {
     padding: 30px;
@@ -546,7 +539,6 @@
   }
 }
 
-/* Medium Tablets (768px - 1023px) */
 @media (min-width: 768px) and (max-width: 1023px) {
   .attendance-container {
     padding: 20px;
@@ -592,7 +584,6 @@
   }
 }
 
-/* Small Tablets & Large Phones (481px - 767px) */
 @media (min-width: 481px) and (max-width: 767px) {
   .page-back-btn {
     top: 82px;
@@ -708,7 +699,6 @@
   }
 }
 
-/* Mobile Phones (320px - 480px) */
 @media (max-width: 480px) {
   .page-back-btn {
     top: 78px;
@@ -855,7 +845,6 @@
   }
 }
 
-/* Extra-Small Phones (Device-based optimizations) */
 @media (hover: none) {
   .page-back-btn,
   .submit-btn,
@@ -876,7 +865,6 @@
   }
 }
 
-/* Reduced Motion Support */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
@@ -892,7 +880,6 @@
   }
 }
 
-/* High Contrast Mode */
 @media (prefers-contrast: more) {
   .attendance-container,
   .modal-content {
@@ -909,7 +896,6 @@
   }
 }
 
-/* Dark Mode Fallback */
 @media (prefers-color-scheme: dark) {
   .attendance-container {
     background-color: #0a0a14;
@@ -922,7 +908,6 @@
   }
 }
 
-/* Print Styles */
 @media print {
   .page-back-btn,
   .button-group,
@@ -958,7 +943,6 @@
   }
 }
 
-/* Safe Area for Notched Devices */
 @supports (padding: max(0px)) {
   .attendance-container {
     padding-left: max(clamp(15px, 4vw, 35px), env(safe-area-inset-left));
@@ -972,7 +956,6 @@
   }
 }
 
-/* High Resolution Displays (2560px+) */
 @media (min-width: 2560px) {
   .attendance-container {
     padding: 60px;
@@ -999,7 +982,6 @@
   }
 }
 
-/* Accessibility - Focus Visible */
 .page-back-btn:focus-visible,
 .submit-btn:focus-visible,
 .edit-btn:focus-visible,
@@ -1009,18 +991,14 @@
   outline-offset: 2px;
 }
 
-/* Smooth Scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-/* Text Selection */
 ::selection {
   background: rgba(0, 212, 255, 0.3);
   color: #ffffff;
 }
-
-/* Performance optimizations */
 .modal-content,
 .attendance-card,
 .subject-card {

@@ -542,11 +542,6 @@
   animation: slideInDown 0.3s ease;
 }
 
-/* ===========================
-   RESPONSIVE DESIGN
-   =========================== */
-
-/* Extra Small Phones (320px - 480px) */
 @media screen and (max-width: 480px) {
   .raise-page {
     padding: clamp(12px, 3vw, 16px);
@@ -631,8 +626,6 @@
     border-radius: clamp(6px, 1vw, 8px);
   }
 }
-
-/* Small Tablets (481px - 767px) */
 @media screen and (min-width: 481px) and (max-width: 767px) {
   .raise-page {
     padding: clamp(16px, 3vw, 20px);
@@ -671,7 +664,6 @@
   }
 }
 
-/* Medium Tablets & Small Desktops (768px - 1023px) */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .raise-page {
     padding: clamp(18px, 2.5vw, 24px);
@@ -692,7 +684,6 @@
   }
 }
 
-/* Large Tablets (1024px - 1199px) */
 @media screen and (min-width: 1024px) and (max-width: 1199px) {
   .raise-page {
     padding: clamp(20px, 2vw, 28px);
@@ -715,7 +706,6 @@
   }
 }
 
-/* Desktops (1200px - 1399px) */
 @media screen and (min-width: 1200px) and (max-width: 1399px) {
   .raise-page {
     padding: clamp(24px, 2vw, 32px);
@@ -738,7 +728,6 @@
   }
 }
 
-/* Large Desktops (1400px - 1799px) */
 @media screen and (min-width: 1400px) and (max-width: 1799px) {
   .raise-page {
     padding: clamp(28px, 1.8vw, 36px);
@@ -761,7 +750,6 @@
   }
 }
 
-/* Ultra-Wide Displays (1800px+) */
 @media screen and (min-width: 1800px) {
   .raise-page {
     padding: 40px;
@@ -795,8 +783,6 @@
   }
 }
 
-
-/* High-Resolution Displays (2560px+) */
 @media screen and (min-width: 2560px) {
   .raise-page {
     padding: 48px;
@@ -838,11 +824,6 @@
   }
 }
 
-/* ===========================
-   ACCESSIBILITY FEATURES
-   =========================== */
-
-/* Respect user's motion preferences */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -866,7 +847,6 @@
   }
 }
 
-/* High Contrast Mode */
 @media (prefers-contrast: more) {
   .raise-page {
     border: 2px solid #00d4ff;
@@ -904,7 +884,6 @@
   }
 }
 
-/* Dark Mode */
 @media (prefers-color-scheme: dark) {
   .raise-page {
     background-color: #0d0d1a;
@@ -919,7 +898,6 @@
   }
 }
 
-/* Print Styles */
 @media print {
   .raise-page {
     margin-top: 0;
@@ -959,7 +937,6 @@
   }
 }
 
-/* Focus Visible (Keyboard Navigation) */
 button:focus-visible,
 .back-btn:focus-visible,
 .raise-btn:focus-visible,
@@ -973,7 +950,6 @@ textarea:focus-visible {
   border-radius: 4px;
 }
 
-/* Safe Area for Notched Devices */
 @supports (padding: max(0px)) {
   .raise-page {
     padding-left: max(clamp(12px, 3vw, 16px), env(safe-area-inset-left));
@@ -986,7 +962,6 @@ textarea:focus-visible {
   }
 }
 
-/* Smooth Scrolling */
 html {
   scroll-behavior: smooth;
 }

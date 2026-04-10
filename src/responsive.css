@@ -1,10 +1,4 @@
-/* ========================================
-   GLOBAL RESPONSIVE DESIGN - ALL PAGES
-   ======================================== */
 
-/* ========== SIGNIN & SIGNUP PAGES ========== */
-
-/* Tablets and Large Phones */
 @media (max-width: 600px) {
   .signin-wrapper,
   .signup-wrapper {
@@ -40,7 +34,6 @@
   }
 }
 
-/* Small Mobile Phones (320px - 480px) */
 @media (max-width: 480px) {
   .signin-wrapper,
   .signup-wrapper {
@@ -100,9 +93,6 @@
   }
 }
 
-/* ========== NAVIGATION & HEADER ========== */
-
-/* Tablets (768px - 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
   .time-wrapper {
     padding: 15px;
@@ -136,7 +126,6 @@
   }
 }
 
-/* Small Screens (481px - 767px) */
 @media (max-width: 767px) {
   .time-wrapper {
     padding: 12px;
@@ -189,7 +178,6 @@
   }
 }
 
-/* Mobile (320px - 480px) */
 @media (max-width: 480px) {
   .time-wrapper {
     padding: 10px;
@@ -257,9 +245,6 @@
   }
 }
 
-/* ========== HOME PAGE ========== */
-
-/* Tablets */
 @media (min-width: 768px) and (max-width: 1024px) {
   .home-box {
     padding: 40px 50px;
@@ -278,7 +263,6 @@
   }
 }
 
-/* Small Screens */
 @media (max-width: 767px) {
   .home-container {
     height: calc(100vh - 70px);
@@ -306,7 +290,6 @@
   }
 }
 
-/* Mobile */
 @media (max-width: 480px) {
   .home-container {
     height: calc(100vh - 55px);
@@ -335,9 +318,6 @@
   }
 }
 
-/* ========== GENERAL RESPONSIVE UTILITIES ========== */
-
-/* Text overflow handling for all screens */
 @media (max-width: 600px) {
   * {
     word-wrap: break-word;
@@ -361,7 +341,6 @@
   }
 }
 
-/* Touch device improvements */
 @media (hover: none) and (pointer: coarse) {
   button,
   a {
@@ -377,7 +356,6 @@
   }
 }
 
-/* High resolution screens */
 @media (min-width: 2560px) {
   .navbar {
     height: 80px;
@@ -416,7 +394,6 @@
   }
 }
 
-/* Print styles */
 @media print {
   .navbar,
   .back-btn,

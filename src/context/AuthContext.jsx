@@ -7,11 +7,9 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    // Clear any saved login data on app load to require credentials
     localStorage.removeItem("currentAdmin");
     localStorage.removeItem("currentStudent");
 
-    // Listen for Firebase auth changes
     const unsub = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
     });
