@@ -836,22 +836,7 @@
   }
 }
 
-/* Extra-Small Phones (Height-based for shorter screens) */
-@media (max-hover: none) and (hover: none) {
-  .back-btn {
-    min-height: 44px;
-    min-width: 44px;
-  }
 
-  .class-card,
-  .stat {
-    min-height: 60px;
-  }
-
-  .split-container {
-    gap: 10px;
-  }
-}
 
 /* Reduced Motion Support - Respect user's motion preferences */
 @media (prefers-reduced-motion: reduce) {
