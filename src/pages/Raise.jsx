@@ -140,49 +140,84 @@ const Raise = () => {
       {successMessage && <div className="success-message">{successMessage}</div>}
 
       <div className="raise-container">
-        <h1>Complaints</h1>
-
-        {complaints.length > 0 ? (
-          <div className="complaints-list">
-            {complaints.map(complaint => (
-              <div key={complaint.id} className="complaint-card">
-                <div className="complaint-header">
-                  <h3>{complaint.title}</h3>
-                  <span
-                    className="status-badge"
-                    style={{ backgroundColor: getStatusColor(complaint.status) }}
-                  >
-                    {complaint.status}
-                  </span>
-                </div>
-                <p className="complaint-description">{complaint.description}</p>
-                <div className="complaint-meta">
-                  <span className="branch"><strong>Branch:</strong> {complaint.branch}</span>
-                  <span className="date"><strong>Submitted:</strong> {complaint.submittedDate}</span>
-                </div>
-
-                {showResolvePanel && (
-                  <div className="action-buttons">
-                    <button
-                      className="resolve-action-btn"
-                      onClick={() => handleResolveComplaint(complaint.id)}
-                    >
-                      ✓ Resolve
-                    </button>
-                    <button
-                      className="reject-action-btn"
-                      onClick={() => handleRejectComplaint(complaint.id)}
-                    >
-                      ✗ Reject
-                    </button>
-                  </div>
-                )}
-              </div>
-            ))}
+        <div className="complaints-wrapper">
+          {/* Left side - Complaint Illustration */}
+          <div className="complaints-illustration">
+            <div className="notebook-image">
+              <svg viewBox="0 0 200 300" className="notebook-svg">
+                {/* Notebook cover */}
+                <rect x="20" y="40" width="160" height="220" rx="8" fill="#00d4ff" opacity="0.1" stroke="#00d4ff" strokeWidth="2"/>
+                
+                {/* Notebook lines */}
+                <line x1="40" y1="80" x2="180" y2="80" stroke="#00d4ff" strokeWidth="1" opacity="0.4"/>
+                <line x1="40" y1="105" x2="180" y2="105" stroke="#00d4ff" strokeWidth="1" opacity="0.4"/>
+                <line x1="40" y1="130" x2="180" y2="130" stroke="#00d4ff" strokeWidth="1" opacity="0.4"/>
+                <line x1="40" y1="155" x2="180" y2="155" stroke="#00d4ff" strokeWidth="1" opacity="0.4"/>
+                <line x1="40" y1="180" x2="180" y2="180" stroke="#00d4ff" strokeWidth="1" opacity="0.4"/>
+                <line x1="40" y1="205" x2="180" y2="205" stroke="#00d4ff" strokeWidth="1" opacity="0.4"/>
+                <line x1="40" y1="230" x2="180" y2="230" stroke="#00d4ff" strokeWidth="1" opacity="0.4"/>
+                
+                {/* Pensive face circle */}
+                <circle cx="100" cy="50" r="20" fill="#00d4ff" opacity="0.2" stroke="#00d4ff" strokeWidth="2"/>
+                
+                {/* Eyes (pensive) */}
+                <circle cx="93" cy="48" r="2" fill="#00d4ff"/>
+                <circle cx="107" cy="48" r="2" fill="#00d4ff"/>
+                
+                {/* Sad mouth */}
+                <path d="M 93 54 Q 100 51 107 54" stroke="#00d4ff" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
+              </svg>
+            </div>
+            <p className="illustration-text">Share Your Concerns</p>
           </div>
-        ) : (
-          <p className="no-complaints">No complaints raised yet. Click "Raise a Complaint" to submit one.</p>
-        )}
+
+          {/* Right side - Complaints List */}
+          <div className="complaints-section">
+            <h1>Complaints</h1>
+
+            {complaints.length > 0 ? (
+              <div className="complaints-list">
+                {complaints.map(complaint => (
+                  <div key={complaint.id} className="complaint-card">
+                    <div className="complaint-header">
+                      <h3>{complaint.title}</h3>
+                      <span
+                        className="status-badge"
+                        style={{ backgroundColor: getStatusColor(complaint.status) }}
+                      >
+                        {complaint.status}
+                      </span>
+                    </div>
+                    <p className="complaint-description">{complaint.description}</p>
+                    <div className="complaint-meta">
+                      <span className="branch"><strong>Branch:</strong> {complaint.branch}</span>
+                      <span className="date"><strong>Submitted:</strong> {complaint.submittedDate}</span>
+                    </div>
+
+                    {showResolvePanel && (
+                      <div className="action-buttons">
+                        <button
+                          className="resolve-action-btn"
+                          onClick={() => handleResolveComplaint(complaint.id)}
+                        >
+                          ✓ Resolve
+                        </button>
+                        <button
+                          className="reject-action-btn"
+                          onClick={() => handleRejectComplaint(complaint.id)}
+                        >
+                          ✗ Reject
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <p className="no-complaints">No complaints raised yet. Click "Raise a Complaint" to submit one.</p>
+            )}
+          </div>
+        </div>
       </div>
 
       {/* Complaint Form Modal */}
