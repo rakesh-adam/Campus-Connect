@@ -856,7 +856,7 @@
 }
 
 /* Extra-Small Phones (Device-based optimizations) */
-@media (max-hover: none) and (hover: none) {
+@media (hover: none) {
   .page-back-btn,
   .submit-btn,
   .edit-btn,
