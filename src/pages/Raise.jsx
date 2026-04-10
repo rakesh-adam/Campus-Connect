@@ -21,13 +21,11 @@ const Raise = () => {
   const staffIds = ['12341', '12342', '12343', '12345', '12346'];
   const correctPassword = 'BVC@123';
 
-  // Load complaints from localStorage
   useEffect(() => {
     const savedComplaints = localStorage.getItem('complaints');
     if (savedComplaints) {
       try {
-        const comps = JSON.parse(savedComplaints);
-        setComplaints(comps);
+        setComplaints(JSON.parse(savedComplaints));
       } catch (error) {
         console.error('Error loading complaints:', error);
       }
@@ -36,55 +34,44 @@ const Raise = () => {
 
   const handleComplaintChange = (e) => {
     const { name, value } = e.target;
-    setComplaintForm(prev => ({
-      ...prev,
-      [name]: value
-    }));
+    setComplaintForm(prev => ({ ...prev, [name]: value }));
   };
 
   const handleSubmitComplaint = (e) => {
     e.preventDefault();
 
-    if (!complaintForm.title.trim()) {
-      alert('Please enter a complaint title');
-      return;
-    }
-
-    if (!complaintForm.description.trim()) {
-      alert('Please enter a complaint description');
+    if (!complaintForm.title.trim() || !complaintForm.description.trim()) {
+      alert('Fill all fields');
       return;
     }
 
     const newComplaint = {
       id: Date.now(),
-      title: complaintForm.title,
-      description: complaintForm.description,
-      branch: complaintForm.branch,
+      ...complaintForm,
       status: 'Pending',
       submittedDate: new Date().toLocaleString()
     };
 
-    const updatedComplaints = [newComplaint, ...complaints];
-    setComplaints(updatedComplaints);
-    localStorage.setItem('complaints', JSON.stringify(updatedComplaints));
+    const updated = [newComplaint, ...complaints];
+    setComplaints(updated);
+    localStorage.setItem('complaints', JSON.stringify(updated));
 
     setComplaintForm({ title: '', description: '', branch: 'CSE' });
     setShowComplaintForm(false);
-    
+
     setSuccessMessage('Complaint submitted successfully!');
     setTimeout(() => setSuccessMessage(''), 3000);
   };
 
   const handleStaffLogin = (e) => {
     e.preventDefault();
-    const { id, password } = staffLogin;
 
-    if (!staffIds.includes(id)) {
+    if (!staffIds.includes(staffLogin.id)) {
       setLoginError('Invalid Staff ID');
       return;
     }
 
-    if (password !== correctPassword) {
+    if (staffLogin.password !== correctPassword) {
       setLoginError('Invalid Password');
       return;
     }
@@ -94,220 +81,140 @@ const Raise = () => {
     setLoginError('');
   };
 
-  const handleResolveComplaint = (complaintId) => {
-    const updatedComplaints = complaints.map(c =>
-      c.id === complaintId ? { ...c, status: 'Resolved' } : c
+  const updateStatus = (id, status) => {
+    const updated = complaints.map(c =>
+      c.id === id ? { ...c, status } : c
     );
-    setComplaints(updatedComplaints);
-    localStorage.setItem('complaints', JSON.stringify(updatedComplaints));
-  };
-
-  const handleRejectComplaint = (complaintId) => {
-    const updatedComplaints = complaints.map(c =>
-      c.id === complaintId ? { ...c, status: 'Rejected' } : c
-    );
-    setComplaints(updatedComplaints);
-    localStorage.setItem('complaints', JSON.stringify(updatedComplaints));
+    setComplaints(updated);
+    localStorage.setItem('complaints', JSON.stringify(updated));
   };
 
   const getStatusColor = (status) => {
-    switch (status) {
-      case 'Pending':
-        return '#00d4ff';
-      case 'Resolved':
-        return '#0066CC';
-      case 'Rejected':
-        return '#f44336';
-      default:
-        return '#808080';
-    }
+    if (status === 'Pending') return '#00d4ff';
+    if (status === 'Resolved') return '#0066CC';
+    if (status === 'Rejected') return '#f44336';
+    return '#808080';
   };
 
   return (
     <StyledWrapper>
       <button className="back-btn" onClick={() => navigate('/home')}>
-        ← Back to Home
+        ← Back
       </button>
 
       <button className="raise-btn" onClick={() => setShowComplaintForm(true)}>
-        + Raise a Complaint
+        + Raise
       </button>
 
       <button className="resolve-btn" onClick={() => setShowStaffLogin(true)}>
-        🔧 Resolve It
+        🔧 Resolve
       </button>
 
       {successMessage && <div className="success-message">{successMessage}</div>}
 
       <div className="raise-container">
-        <div className="complaints-wrapper">
-          {/* Left side - Complaint Illustration */}
-          <div className="complaints-illustration">
-            <div className="notebook-image">
-              <svg viewBox="0 0 200 300" className="notebook-svg">
-                {/* Notebook cover */}
-                <rect x="20" y="40" width="160" height="220" rx="8" fill="#00d4ff" opacity="0.1" stroke="#00d4ff" strokeWidth="2"/>
-                
-                {/* Notebook lines */}
-                <line x1="40" y1="80" x2="180" y2="80" stroke="#00d4ff" strokeWidth="1" opacity="0.4"/>
-                <line x1="40" y1="105" x2="180" y2="105" stroke="#00d4ff" strokeWidth="1" opacity="0.4"/>
-                <line x1="40" y1="130" x2="180" y2="130" stroke="#00d4ff" strokeWidth="1" opacity="0.4"/>
-                <line x1="40" y1="155" x2="180" y2="155" stroke="#00d4ff" strokeWidth="1" opacity="0.4"/>
-                <line x1="40" y1="180" x2="180" y2="180" stroke="#00d4ff" strokeWidth="1" opacity="0.4"/>
-                <line x1="40" y1="205" x2="180" y2="205" stroke="#00d4ff" strokeWidth="1" opacity="0.4"/>
-                <line x1="40" y1="230" x2="180" y2="230" stroke="#00d4ff" strokeWidth="1" opacity="0.4"/>
-                
-                {/* Pensive face circle */}
-                <circle cx="100" cy="50" r="20" fill="#00d4ff" opacity="0.2" stroke="#00d4ff" strokeWidth="2"/>
-                
-                {/* Eyes (pensive) */}
-                <circle cx="93" cy="48" r="2" fill="#00d4ff"/>
-                <circle cx="107" cy="48" r="2" fill="#00d4ff"/>
-                
-                {/* Sad mouth */}
-                <path d="M 93 54 Q 100 51 107 54" stroke="#00d4ff" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
-              </svg>
-            </div>
-            <p className="illustration-text">Share Your Concerns</p>
-          </div>
+        <h1>Complaints</h1>
 
-          {/* Right side - Complaints List */}
-          <div className="complaints-section">
-            <h1>Complaints</h1>
+        {complaints.length > 0 ? (
+          <div className="complaints-list">
+            {complaints.map(c => (
+              <div key={c.id} className="complaint-card">
+                <div className="complaint-header">
+                  <h3>{c.title}</h3>
+                  <span
+                    className="status-badge"
+                    style={{ backgroundColor: getStatusColor(c.status) }}
+                  >
+                    {c.status}
+                  </span>
+                </div>
 
-            {complaints.length > 0 ? (
-              <div className="complaints-list">
-                {complaints.map(complaint => (
-                  <div key={complaint.id} className="complaint-card">
-                    <div className="complaint-header">
-                      <h3>{complaint.title}</h3>
-                      <span
-                        className="status-badge"
-                        style={{ backgroundColor: getStatusColor(complaint.status) }}
-                      >
-                        {complaint.status}
-                      </span>
-                    </div>
-                    <p className="complaint-description">{complaint.description}</p>
-                    <div className="complaint-meta">
-                      <span className="branch"><strong>Branch:</strong> {complaint.branch}</span>
-                      <span className="date"><strong>Submitted:</strong> {complaint.submittedDate}</span>
-                    </div>
+                <p className="complaint-description">{c.description}</p>
 
-                    {showResolvePanel && (
-                      <div className="action-buttons">
-                        <button
-                          className="resolve-action-btn"
-                          onClick={() => handleResolveComplaint(complaint.id)}
-                        >
-                          ✓ Resolve
-                        </button>
-                        <button
-                          className="reject-action-btn"
-                          onClick={() => handleRejectComplaint(complaint.id)}
-                        >
-                          ✗ Reject
-                        </button>
-                      </div>
-                    )}
+                <div className="complaint-meta">
+                  <span><strong>Branch:</strong> {c.branch}</span>
+                  <span><strong>Submitted:</strong> {c.submittedDate}</span>
+                </div>
+
+                {showResolvePanel && (
+                  <div className="action-buttons">
+                    <button onClick={() => updateStatus(c.id, 'Resolved')}>
+                      ✓ Resolve
+                    </button>
+                    <button onClick={() => updateStatus(c.id, 'Rejected')}>
+                      ✗ Reject
+                    </button>
                   </div>
-                ))}
+                )}
               </div>
-            ) : (
-              <p className="no-complaints">No complaints raised yet. Click "Raise a Complaint" to submit one.</p>
-            )}
+            ))}
           </div>
-        </div>
+        ) : (
+          <p className="no-complaints">
+            No complaints yet. Click "Raise".
+          </p>
+        )}
       </div>
 
-      {/* Complaint Form Modal */}
+      {/* Complaint Modal */}
       {showComplaintForm && (
         <div className="modal-overlay">
-          <div className="modal-content complaint-modal">
-            <button className="close-btn" onClick={() => setShowComplaintForm(false)}>×</button>
-            <h2>Raise a Complaint</h2>
+          <div className="modal-content">
+            <button onClick={() => setShowComplaintForm(false)}>×</button>
+            <h2>Raise Complaint</h2>
+
             <form onSubmit={handleSubmitComplaint}>
-              <div className="form-group">
-                <label>Complaint Title:</label>
-                <input
-                  type="text"
-                  name="title"
-                  value={complaintForm.title}
-                  onChange={handleComplaintChange}
-                  placeholder="Enter complaint title"
-                  required
-                />
-              </div>
+              <input
+                name="title"
+                value={complaintForm.title}
+                onChange={handleComplaintChange}
+                placeholder="Title"
+              />
+              <textarea
+                name="description"
+                value={complaintForm.description}
+                onChange={handleComplaintChange}
+                placeholder="Description"
+              />
+              <select
+                name="branch"
+                value={complaintForm.branch}
+                onChange={handleComplaintChange}
+              >
+                {branches.map(b => <option key={b}>{b}</option>)}
+              </select>
 
-              <div className="form-group">
-                <label>Description:</label>
-                <textarea
-                  name="description"
-                  value={complaintForm.description}
-                  onChange={handleComplaintChange}
-                  placeholder="Describe your complaint in detail"
-                  rows="5"
-                  required
-                />
-              </div>
-
-              <div className="form-group">
-                <label>Branch:</label>
-                <select
-                  name="branch"
-                  value={complaintForm.branch}
-                  onChange={handleComplaintChange}
-                >
-                  {branches.map(branch => (
-                    <option key={branch} value={branch}>{branch}</option>
-                  ))}
-                </select>
-              </div>
-                <button type="submit" className="submit-btn1">Submit Complaint</button>
-
-              
+              <button type="submit">Submit</button>
             </form>
           </div>
         </div>
       )}
 
-      {/* Staff Login Modal */}
+      {/* Staff Login */}
       {showStaffLogin && (
         <div className="modal-overlay">
           <div className="modal-content">
-            <button className="close-btn" onClick={() => setShowStaffLogin(false)}>×</button>
+            <button onClick={() => setShowStaffLogin(false)}>×</button>
             <h2>Staff Login</h2>
+
             <form onSubmit={handleStaffLogin}>
-              <div className="form-group">
-                <label>Staff ID:</label>
-                <input
-                  type="text"
-                  value={staffLogin.id}
-                  onChange={(e) => setStaffLogin(prev => ({
-                    ...prev,
-                    id: e.target.value
-                  }))}
-                  placeholder="Enter your Staff ID"
-                  required
-                />
-              </div>
+              <input
+                placeholder="ID"
+                onChange={(e) =>
+                  setStaffLogin(prev => ({ ...prev, id: e.target.value }))
+                }
+              />
+              <input
+                type="password"
+                placeholder="Password"
+                onChange={(e) =>
+                  setStaffLogin(prev => ({ ...prev, password: e.target.value }))
+                }
+              />
 
-              <div className="form-group">
-                <label>Password:</label>
-                <input
-                  type="password"
-                  value={staffLogin.password}
-                  onChange={(e) => setStaffLogin(prev => ({
-                    ...prev,
-                    password: e.target.value
-                  }))}
-                  placeholder="Enter password"
-                  required
-                />
-              </div>
+              {loginError && <p>{loginError}</p>}
 
-              {loginError && <p className="error-message">{loginError}</p>}
-              <button type="submit" className="login-btn">Login</button>
+              <button type="submit">Login</button>
             </form>
           </div>
         </div>
