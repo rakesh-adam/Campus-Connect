@@ -795,41 +795,6 @@
   }
 }
 
-/* Touch Devices */
-@media (hover: none) and (pointer: coarse) {
-  .back-btn,
-  .raise-btn,
-  .submit-btn,
-  .login-btn,
-  .resolve-btn,
-  .complaint-card button {
-    min-height: 44px;
-    min-width: 44px;
-    padding: clamp(12px, 2.5vw, 16px) clamp(16px, 3vw, 20px);
-  }
-
-  .close-btn {
-    min-width: 44px;
-    min-height: 44px;
-    width: 44px;
-    height: 44px;
-  }
-
-  .form-group input,
-  .form-group textarea {
-    min-height: 44px;
-    padding: clamp(12px, 2vw, 15px);
-  }
-
-  /* Remove hover effects on touch devices */
-  .complaint-card:hover {
-    box-shadow: 0 4px 15px rgba(0, 212, 255, 0.2);
-  }
-
-  button:active {
-    opacity: 0.9;
-  }
-}
 
 /* High-Resolution Displays (2560px+) */
 @media screen and (min-width: 2560px) {
