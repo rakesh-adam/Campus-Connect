@@ -31,7 +31,7 @@ const Home = () => {
     }
   }, []);
 
-  const handleSignOut = async () => {
+  const handleSignOut = () => {
     // Check if user is admin
     const currentAdmin = localStorage.getItem("currentAdmin");
     if (currentAdmin) {
@@ -46,8 +46,8 @@ const Home = () => {
       localStorage.removeItem("currentStudent");
       navigate("/signin");
     } else {
-      // Firebase logout
-      await signOut(auth);
+      // Firebase logout - don't await, let it happen in background
+      signOut(auth).catch(err => console.error("Sign out error:", err));
       navigate("/signin");
     }
   };

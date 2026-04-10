@@ -1,0 +1,439 @@
+/* ========================================
+   GLOBAL RESPONSIVE DESIGN - ALL PAGES
+   ======================================== */
+
+/* ========== SIGNIN & SIGNUP PAGES ========== */
+
+/* Tablets and Large Phones */
+@media (max-width: 600px) {
+  .signin-wrapper,
+  .signup-wrapper {
+    padding: 15px;
+  }
+
+  .signin-wrapper .content,
+  .signup-wrapper .content {
+    max-width: 100%;
+    width: 100%;
+    padding: clamp(25px, 3vw, 30px) clamp(15px, 3vw, 20px);
+  }
+
+  .signin-wrapper .text,
+  .signup-wrapper .text {
+    font-size: clamp(22px, 5vw, 28px);
+  }
+
+  .field {
+    height: clamp(40px, 8vw, 45px);
+    margin-top: clamp(12px, 2vw, 15px);
+  }
+
+  .button {
+    font-size: clamp(13px, 2.5vw, 16px);
+    margin-top: clamp(20px, 3vw, 25px);
+  }
+
+  .sign-up,
+  .sign-in {
+    font-size: clamp(12px, 2vw, 14px);
+    margin-top: clamp(12px, 2vw, 15px);
+  }
+}
+
+/* Small Mobile Phones (320px - 480px) */
+@media (max-width: 480px) {
+  .signin-wrapper,
+  .signup-wrapper {
+    padding: 10px;
+    min-height: 100vh;
+  }
+
+  .signin-wrapper .content,
+  .signup-wrapper .content {
+    max-width: 100%;
+    width: 100%;
+    padding: 20px 15px;
+    border-radius: 8px;
+  }
+
+  .signin-wrapper .text,
+  .signup-wrapper .text {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .field {
+    height: 38px;
+    margin-top: 10px;
+  }
+
+  .field:first-of-type {
+    margin-top: 0;
+  }
+
+  .field i {
+    left: clamp(40px, 8vw, 45px);
+    font-size: clamp(16px, 3vw, 18px);
+  }
+
+  .input {
+    padding-left: clamp(40px, 8vw, 45px);
+    padding-right: 10px;
+    font-size: 13px;
+  }
+
+  .button {
+    font-size: 14px;
+    margin-top: 18px;
+    padding: 10px;
+  }
+
+  .sign-up,
+  .sign-in {
+    font-size: 12px;
+    margin-top: 10px;
+  }
+
+  .sign-up a,
+  .sign-in a {
+    margin-left: 3px;
+  }
+}
+
+/* ========== NAVIGATION & HEADER ========== */
+
+/* Tablets (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .time-wrapper {
+    padding: 15px;
+    background: #1a1a2e;
+    min-height: 100vh;
+    width: 100%;
+  }
+
+  .navbar {
+    height: 65px;
+    padding: 0 25px;
+  }
+
+  .brand-name {
+    font-size: 20px;
+  }
+
+  .nav-links {
+    gap: clamp(15px, 2vw, 25px);
+  }
+
+  .nav-links li a {
+    font-size: clamp(13px, 2vw, 15px);
+    padding: 6px 12px;
+  }
+
+  .signout-btn {
+    width: clamp(100px, 15vw, 120px);
+    height: 40px;
+    font-size: 12px;
+  }
+}
+
+/* Small Screens (481px - 767px) */
+@media (max-width: 767px) {
+  .time-wrapper {
+    padding: 12px;
+    background: #1a1a2e;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .navbar {
+    height: 60px;
+    padding: 0 15px;
+  }
+
+  .brand-name {
+    font-size: 16px;
+    letter-spacing: 0.5px;
+  }
+
+  .hamburger {
+    width: 20px;
+  }
+
+  .hamburger span {
+    width: 20px;
+    height: 2.5px;
+  }
+
+  .nav-links {
+    gap: 0;
+    padding: 10px 0;
+  }
+
+  .nav-links li a {
+    padding: 12px 15px;
+    font-size: 14px;
+  }
+
+  .navbar-email {
+    font-size: 11px;
+    max-width: 120px;
+  }
+
+  .signout-btn {
+    width: 100px;
+    height: 38px;
+    font-size: 11px;
+    padding: 0 12px;
+  }
+}
+
+/* Mobile (320px - 480px) */
+@media (max-width: 480px) {
+  .time-wrapper {
+    padding: 10px;
+    background: #1a1a2e;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .navbar {
+    height: 55px;
+    padding: 0 10px;
+  }
+
+  .brand-name {
+    font-size: 14px;
+    letter-spacing: 0.3px;
+  }
+
+  .nav-brand {
+    min-width: 120px;
+    gap: 8px;
+  }
+
+  .hamburger {
+    width: 18px;
+  }
+
+  .hamburger span {
+    width: 18px;
+    height: 2px;
+  }
+
+  .nav-links {
+    top: 55px;
+    padding: 8px 0;
+  }
+
+  .nav-links li a {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .navbar-signout-section {
+    gap: 8px;
+  }
+
+  .navbar-email {
+    font-size: 10px;
+    max-width: 100px;
+  }
+
+  .signout-btn {
+    width: 80px;
+    height: 35px;
+    font-size: 10px;
+    padding: 0 10px;
+  }
+
+  .signout-link a {
+    font-size: 12px;
+    padding: 8px 12px !important;
+    margin: 8px 12px !important;
+  }
+}
+
+/* ========== HOME PAGE ========== */
+
+/* Tablets */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .home-box {
+    padding: 40px 50px;
+  }
+
+  .welcome-text {
+    font-size: clamp(40px, 8vw, 60px);
+  }
+
+  .welcome-subtitle {
+    font-size: clamp(30px, 6vw, 45px);
+  }
+
+  .h1 {
+    font-size: clamp(70px, 12vw, 90px);
+  }
+}
+
+/* Small Screens */
+@media (max-width: 767px) {
+  .home-container {
+    height: calc(100vh - 70px);
+  }
+
+  .home-box {
+    padding: 30px 30px;
+    border: 2px solid #00d4ff;
+    max-width: 95%;
+    border-radius: 15px;
+  }
+
+  .welcome-text {
+    font-size: clamp(30px, 6vw, 50px);
+    margin: 15px 0 0 0;
+  }
+
+  .welcome-subtitle {
+    font-size: clamp(22px, 5vw, 36px);
+    margin: 5px 0 0 0;
+  }
+
+  .h1 {
+    font-size: clamp(50px, 10vw, 75px);
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .home-container {
+    height: calc(100vh - 55px);
+    margin-top: 55px;
+  }
+
+  .home-box {
+    padding: 20px 20px;
+    border: 2px solid #00d4ff;
+    border-radius: 12px;
+    max-width: 98%;
+  }
+
+  .welcome-text {
+    font-size: clamp(24px, 5vw, 40px);
+    margin: 10px 0 0 0;
+  }
+
+  .welcome-subtitle {
+    font-size: clamp(18px, 4vw, 30px);
+    margin: 3px 0 0 0;
+  }
+
+  .h1 {
+    font-size: clamp(40px, 8vw, 60px);
+  }
+}
+
+/* ========== GENERAL RESPONSIVE UTILITIES ========== */
+
+/* Text overflow handling for all screens */
+@media (max-width: 600px) {
+  * {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  input,
+  textarea,
+  select,
+  button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 4px;
+  }
+
+  input,
+  textarea,
+  select {
+    font-size: 16px;
+  }
+}
+
+/* Touch device improvements */
+@media (hover: none) and (pointer: coarse) {
+  button,
+  a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    padding: 12px;
+  }
+}
+
+/* High resolution screens */
+@media (min-width: 2560px) {
+  .navbar {
+    height: 80px;
+    padding: 0 60px;
+  }
+
+  .brand-name {
+    font-size: 32px;
+  }
+
+  .nav-links li a {
+    font-size: 18px;
+    padding: 12px 24px;
+  }
+
+  .signout-btn {
+    width: 160px;
+    height: 50px;
+    font-size: 16px;
+  }
+
+  .home-box {
+    padding: 80px 120px;
+  }
+
+  .welcome-text {
+    font-size: 120px;
+  }
+
+  .welcome-subtitle {
+    font-size: 90px;
+  }
+
+  .h1 {
+    font-size: 150px;
+  }
+}
+
+/* Print styles */
+@media print {
+  .navbar,
+  .back-btn,
+  .signout-btn,
+  .hamburger {
+    display: none !important;
+  }
+
+  .home-container,
+  .time-wrapper,
+  .page-back-btn {
+    background: white;
+    color: black;
+  }
+
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+}

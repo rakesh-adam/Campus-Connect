@@ -1,254 +1,1028 @@
+/* ====== ATTENDANCE PAGE STYLING ====== */
+/* Dark Navy Blue (#1a1a2e) & Skyblue (#00d4ff) Theme */
+
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(26, 26, 46, 0.9);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1000;
+  backdrop-filter: blur(5px);
+  animation: fadeIn 0.3s ease;
 }
 
 .modal-back-btn {
   position: absolute;
-  top: 15px;
-  left: 15px;
-  padding: 8px 15px;
-  background: #f44336;
+  top: clamp(10px, 2vw, 20px);
+  left: clamp(10px, 2vw, 20px);
+  padding: clamp(6px, 1vw, 10px) clamp(12px, 2vw, 18px);
+  background: linear-gradient(135deg, #d32f2f, #f44336);
   color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 12px;
-  font-weight: 600;
+  border: 2px solid #ff7043;
+  border-radius: 8px;
+  font-size: clamp(10px, 1.5vw, 13px);
+  font-weight: 700;
   cursor: pointer;
   z-index: 1001;
-  transition: 0.3s;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(244, 67, 54, 0.3);
+  backdrop-filter: blur(10px);
 }
 
 .modal-back-btn:hover {
-  background: #d32f2f;
-  transform: translateX(-2px);
+  background: linear-gradient(135deg, #c62828, #e53935);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(244, 67, 54, 0.5);
+  border-color: #ff5722;
 }
 
 .page-back-btn {
   position: fixed;
-  top: 20px;
-  left: 20px;
-  padding: 10px 20px;
-  background: #0066CC;
+  top: clamp(85px, 10vw, 100px);
+  left: clamp(10px, 3vw, 25px);
+  padding: clamp(6px, 1vw, 12px) clamp(10px, 2vw, 20px);
+  background: linear-gradient(135deg, #0066CC, #00a8e8);
   color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 14px;
-  font-weight: 600;
+  border: 2px solid #00d4ff;
+  border-radius: 8px;
+  font-size: clamp(10px, 2vw, 14px);
+  font-weight: 700;
   cursor: pointer;
   z-index: 100;
-  transition: 0.3s;
-  box-shadow: 0 2px 8px rgba(0, 102, 204, 0.3);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+  backdrop-filter: blur(10px);
+  white-space: nowrap;
+  touch-action: manipulation;
 }
 
 .page-back-btn:hover {
-  background: #0052A3;
-  box-shadow: 0 4px 12px rgba(0, 102, 204, 0.5);
-  transform: translateX(-3px);
+  background: linear-gradient(135deg, #0052A3, #0088cc);
+  box-shadow: 0 6px 20px rgba(0, 212, 255, 0.5);
+  transform: translateY(-2px);
+  border-color: #00ffff;
 }
 
 .modal-content {
-  background: #1a1a2e;
-  padding: 40px;
-  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(26, 26, 46, 0.98), rgba(0, 102, 204, 0.05));
+  padding: clamp(25px, 5vw, 50px);
+  border-radius: 15px;
   text-align: center;
-  min-width: 350px;
+  min-width: clamp(300px, 90vw, 450px);
   position: relative;
   border: 2px solid #00d4ff;
+  box-shadow: 0 8px 32px rgba(0, 212, 255, 0.2), inset 0 0 30px rgba(0, 212, 255, 0.05);
+  backdrop-filter: blur(10px);
+  animation: slideInModal 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes slideInModal {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .modal-content h2 {
-  margin-bottom: 30px;
-  margin-top: 10px;
+  margin-bottom: clamp(20px, 4vw, 35px);
+  margin-top: clamp(5px, 2vw, 15px);
   color: #00d4ff;
+  font-size: clamp(20px, 5vw, 32px);
+  font-weight: 700;
+  text-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+  letter-spacing: 1px;
 }
 
 .modal-content input {
   width: 100%;
-  padding: 12px;
-  margin-bottom: 20px;
+  padding: clamp(10px, 2vw, 15px);
+  margin-bottom: clamp(15px, 3vw, 25px);
   border: 2px solid #00d4ff;
-  border-radius: 5px;
-  font-size: 16px;
-  background: rgba(0, 212, 255, 0.05);
+  border-radius: 10px;
+  font-size: clamp(13px, 2vw, 16px);
+  background: rgba(0, 212, 255, 0.08);
   color: #00d4ff;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.modal-content input::placeholder {
+  color: #00d4ff;
+  opacity: 0.7;
 }
 
 .modal-content input:focus {
   outline: none;
-  border-color: #00d4ff;
-  box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+  border-color: #00ffff;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.5), inset 0 0 10px rgba(0, 212, 255, 0.1);
+  background: rgba(0, 212, 255, 0.12);
 }
 
 .modal-buttons {
   display: flex;
-  gap: 10px;
+  gap: clamp(10px, 2vw, 15px);
+  flex-wrap: wrap;
 }
 
 .modal-buttons button {
   flex: 1;
-  padding: 12px;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  font-weight: 600;
+  min-width: 100px;
+  padding: clamp(10px, 2vw, 15px);
+  border: 2px solid #00d4ff;
+  border-radius: 10px;
+  font-size: clamp(12px, 2vw, 16px);
+  font-weight: 700;
   cursor: pointer;
-  background: #0066CC;
+  background: linear-gradient(135deg, #0066CC, #00a8e8);
   color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .modal-buttons button:hover {
-  background: #0052A3;
+  background: linear-gradient(135deg, #0052A3, #0088cc);
+  box-shadow: 0 6px 20px rgba(0, 212, 255, 0.5);
+  transform: translateY(-2px);
+  border-color: #00ffff;
+}
+
+.modal-buttons button:active {
+  transform: translateY(0);
 }
 
 .attendance-container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 30px;
+  padding: clamp(15px, 4vw, 35px);
   background: #1a1a2e;
   min-height: 100vh;
+  margin-top: 70px;
+  animation: fadeIn 0.6s ease;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: clamp(20px, 4vw, 35px);
+  flex-wrap: wrap;
+  gap: clamp(15px, 3vw, 25px);
 }
 
 .header h2 {
   color: #00d4ff;
+  font-size: clamp(20px, 5vw, 32px);
+  font-weight: 700;
+  text-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+  margin: 0;
 }
 
 .button-group {
   display: flex;
-  gap: 10px;
+  gap: clamp(10px, 2vw, 15px);
+  flex-wrap: wrap;
 }
 
 .submit-btn,
 .edit-btn {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  font-weight: 600;
+  padding: clamp(8px, 1.5vw, 14px) clamp(15px, 3vw, 25px);
+  border: 2px solid #00d4ff;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: clamp(11px, 2vw, 14px);
   cursor: pointer;
-  top: 20px;
-  right: 20px;
-}
-
-.submit-btn {
-  background: #0066CC;
+  background: linear-gradient(135deg, #0066CC, #00a8e8);
   color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  touch-action: manipulation;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.submit-btn:hover {
-  background: #0052A3;
-}
-
-.edit-btn {
-  background: #0066CC;
-  color: white;
-}
-
+.submit-btn:hover,
 .edit-btn:hover {
-  background: #0052A3;
+  background: linear-gradient(135deg, #0052A3, #0088cc);
+  border-color: #00ffff;
+  box-shadow: 0 6px 20px rgba(0, 212, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+.submit-btn:active,
+.edit-btn:active {
+  transform: translateY(0);
 }
 
 .success-message {
-  background: rgba(0, 212, 255, 0.1);
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(0, 102, 204, 0.08));
   color: #00d4ff;
-  padding: 15px;
-  border-radius: 5px;
-  margin-bottom: 30px;
-  font-weight: 600;
-  border: 1px solid #00d4ff;
+  padding: clamp(12px, 2vw, 20px);
+  border-radius: 10px;
+  margin-bottom: clamp(15px, 4vw, 30px);
+  font-weight: 700;
+  border: 2px solid #00d4ff;
+  font-size: clamp(13px, 2vw, 16px);
+  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.2);
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+  animation: slideInDown 0.5s ease;
+}
+
+@keyframes slideInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .attendance-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(clamp(200px, 30vw, 300px), 1fr));
+  gap: clamp(15px, 3vw, 25px);
+  margin-bottom: clamp(20px, 4vw, 30px);
 }
 
 .attendance-card {
-  background: rgba(0, 212, 255, 0.05);
-  padding: 20px;
-  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.08), rgba(0, 102, 204, 0.08));
+  padding: clamp(15px, 3vw, 25px);
+  border-radius: 12px;
   border: 2px solid #00d4ff;
+  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.1);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  animation: slideInLeft 0.5s ease;
+  animation-fill-mode: both;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.attendance-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.2), transparent);
+  transition: left 0.6s ease;
+}
+
+.attendance-card:hover::before {
+  left: 100%;
+}
+
+.attendance-card:hover {
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.15), rgba(0, 102, 204, 0.12));
+  border-color: #00ffff;
+  box-shadow: 0 6px 25px rgba(0, 212, 255, 0.3);
+  transform: translateY(-5px);
 }
 
 .attendance-card h4 {
-  margin-bottom: 15px;
+  margin-bottom: clamp(12px, 2vw, 18px);
   color: #00d4ff;
+  font-size: clamp(14px, 2.5vw, 18px);
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+  margin-top: 0;
 }
 
 .checkbox-group {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: clamp(8px, 1.5vw, 12px);
 }
 
 .checkbox-label {
   display: flex;
   align-items: center;
   cursor: pointer;
+  color: #e0e0e0;
+  font-size: clamp(12px, 1.5vw, 14px);
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: clamp(6px, 1vw, 10px);
+  border-radius: 8px;
+}
+
+.checkbox-label:hover {
+  background: rgba(0, 212, 255, 0.1);
+  color: #00ffff;
 }
 
 .checkbox-label input {
-  margin-right: 10px;
-  width: 18px;
-  height: 18px;
+  margin-right: clamp(8px, 1.5vw, 12px);
+  width: clamp(16px, 3vw, 20px);
+  height: clamp(16px, 3vw, 20px);
+  cursor: pointer;
+  accent-color: #00d4ff;
+  transition: all 0.3s ease;
+}
+
+.checkbox-label input:hover {
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
 }
 
 .checkbox-label input:disabled {
   cursor: not-allowed;
-  opacity: 0.6;
+  opacity: 0.5;
 }
 
 .student-attendance {
-  background: white;
-  padding: 30px;
-  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.06), rgba(0, 102, 204, 0.06));
+  padding: clamp(20px, 4vw, 35px);
+  border-radius: 12px;
+  border: 2px solid #00d4ff;
+  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.1);
+}
+
+.student-attendance h3 {
+  color: #00d4ff;
+  font-size: clamp(16px, 3vw, 24px);
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+  margin: 0 0 clamp(20px, 4vw, 30px) 0;
+}
+
+.attendance-container > h2 {
+  color: #00d4ff;
+  font-size: clamp(20px, 5vw, 32px);
+  font-weight: 700;
+  text-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+  margin-bottom: clamp(20px, 4vw, 35px);
 }
 
 .subjects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(clamp(150px, 25vw, 200px), 1fr));
+  gap: clamp(15px, 3vw, 20px);
 }
 
 .subject-card {
-  background: #f5f5f5;
-  padding: 20px;
-  border-radius: 8px;
-  border: 2px solid #e0e0e0;
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.08), rgba(0, 102, 204, 0.08));
+  padding: clamp(15px, 2.5vw, 22px);
+  border-radius: 12px;
+  border: 2px solid #00d4ff;
   text-align: center;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.1);
+  animation: scaleInCard 0.5s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes scaleInCard {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.subject-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.15), transparent);
+  transition: left 0.5s ease;
+}
+
+.subject-card:hover::after {
+  left: 100%;
+}
+
+.subject-card:hover {
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.15), rgba(0, 102, 204, 0.12));
+  border-color: #00ffff;
+  box-shadow: 0 6px 25px rgba(0, 212, 255, 0.3);
+  transform: translateY(-4px);
 }
 
 .subject-card h4 {
-  margin-bottom: 15px;
+  margin-bottom: clamp(10px, 2vw, 15px);
+  color: #00d4ff;
+  font-size: clamp(13px, 2vw, 16px);
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+  margin-top: 0;
 }
 
 .attendance-status p {
-  font-weight: 600;
+  font-weight: 700;
+  font-size: clamp(11px, 2vw, 14px);
+  margin: clamp(5px, 1vw, 10px) 0;
+  letter-spacing: 0.5px;
 }
 
 .status-pending {
-  color: #ff9800;
+  color: #ffc107;
+  text-transform: uppercase;
+  font-weight: 900;
 }
 
 .status-present {
   color: #4CAF50;
+  text-transform: uppercase;
+  font-weight: 900;
+  text-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
 }
 
 .status-absent {
-  color: #f44336;
+  color: #ff5252;
+  text-transform: uppercase;
+  font-weight: 900;
+  text-shadow: 0 0 10px rgba(255, 82, 82, 0.3);
+}
+
+/* ====== RESPONSIVE DESIGN ====== */
+
+/* Large Screens (1400px+) */
+@media (min-width: 1400px) {
+  .attendance-container {
+    padding: 40px;
+  }
+
+  .header h2 {
+    font-size: 36px;
+    color: skyblue;
+      margin: 0;
+  }
+
+  .attendance-grid {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+  }
+
+  .attendance-card {
+    padding: 28px;
+  }
+
+  .modal-content {
+    min-width: 500px;
+    padding: 60px;
+  }
+}
+
+/* Extra-Large Screens (1200px - 1399px) */
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .attendance-container {
+    padding: 35px;
+  }
+
+  .attendance-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+  }
+
+  .modal-content {
+    min-width: 450px;
+  }
+}
+
+/* Large Tablets (1024px - 1199px) */
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .attendance-container {
+    padding: 30px;
+  }
+
+  .header {
+    gap: 20px;
+  }
+
+  .attendance-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .modal-content {
+    min-width: 420px;
+    padding: 40px;
+  }
+}
+
+/* Medium Tablets (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .attendance-container {
+    padding: 20px;
+    margin-top: 70px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+  }
+
+  .button-group {
+    width: 100%;
+  }
+
+  .submit-btn,
+  .edit-btn {
+    flex: 1;
+  }
+
+  .attendance-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 18px;
+  }
+
+  .attendance-card {
+    padding: 18px;
+  }
+
+  .modal-content {
+    min-width: 90%;
+    padding: 35px;
+  }
+
+  .subjects-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 15px;
+  }
+
+  .subject-card {
+    padding: 16px;
+  }
+}
+
+/* Small Tablets & Large Phones (481px - 767px) */
+@media (min-width: 481px) and (max-width: 767px) {
+  .page-back-btn {
+    top: 82px;
+    left: 12px;
+    padding: 6px 11px;
+    font-size: 11px;
+  }
+
+  .attendance-container {
+    padding: 15px;
+    margin-top: 70px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+
+  .button-group {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .submit-btn,
+  .edit-btn {
+    width: 100%;
+    padding: 9px 12px;
+    font-size: 12px;
+    min-height: 40px;
+  }
+
+  .modal-back-btn {
+    padding: 6px 10px;
+    font-size: 10px;
+  }
+
+  .modal-content {
+    min-width: 95%;
+    padding: 25px;
+  }
+
+  .modal-content h2 {
+    font-size: 18px;
+    margin-bottom: 18px;
+    color: #00ffff;
+  }
+
+  .modal-content input {
+    padding: 9px;
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+
+  .modal-buttons {
+    gap: 8px;
+  }
+
+  .modal-buttons button {
+    padding: 9px;
+    font-size: 12px;
+    min-width: 90px;
+  }
+
+  .attendance-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 14px;
+  }
+
+  .attendance-card {
+    padding: 14px;
+  }
+
+  .attendance-card h4 {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+
+  .checkbox-group {
+    gap: 8px;
+  }
+
+  .checkbox-label {
+    font-size: 13px;
+    padding: 6px;
+  }
+
+  .checkbox-label input {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+  }
+
+  .subjects-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+  }
+
+  .subject-card {
+    padding: 14px;
+  }
+
+  .subject-card h4 {
+    font-size: 13px;
+  }
+
+  .success-message {
+    padding: 12px;
+    margin-bottom: 18px;
+    font-size: 12px;
+  }
+}
+
+/* Mobile Phones (320px - 480px) */
+@media (max-width: 480px) {
+  .page-back-btn {
+    top: 78px;
+    left: 10px;
+    padding: 5px 9px;
+    font-size: 9px;
+    min-height: 36px;
+    min-width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .attendance-container {
+    padding: 12px;
+    margin-top: 70px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+
+
+  .button-group {
+    width: 100%;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .submit-btn,
+  .edit-btn {
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 11px;
+    min-height: 38px;
+  }
+
+  .modal-overlay {
+    padding: 10px;
+  }
+
+  .modal-back-btn {
+    padding: 5px 8px;
+    font-size: 9px;
+    top: 10px;
+    left: 10px;
+  }
+
+  .modal-content {
+    min-width: 98%;
+    padding: 18px;
+    border-radius: 12px;
+  }
+
+  .modal-content h2 {
+    font-size: 15px;
+    color: #00ffff;
+    margin-bottom: 14px;
+    margin-top: 8px;
+  }
+
+  .modal-content input {
+    padding: 8px;
+    font-size: 13px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+  }
+
+  .modal-buttons {
+    gap: 6px;
+    flex-direction: column;
+  }
+
+  .modal-buttons button {
+    padding: 8px;
+    font-size: 11px;
+    width: 100%;
+    min-height: 36px;
+  }
+
+  .attendance-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .attendance-card {
+    padding: 12px;
+    border-radius: 10px;
+  }
+
+  .attendance-card h4 {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+
+  .checkbox-group {
+    gap: 6px;
+  }
+
+  .checkbox-label {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .checkbox-label input {
+    width: 14px;
+    height: 14px;
+    margin-right: 6px;
+  }
+
+  .student-attendance {
+    padding: 14px;
+    border-radius: 10px;
+  }
+
+  .subjects-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .subject-card {
+    padding: 12px;
+    border-radius: 10px;
+  }
+
+  .subject-card h4 {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+
+  .success-message {
+    padding: 11px;
+    margin-bottom: 15px;
+    font-size: 11px;
+    border-radius: 8px;
+  }
+
+  .attendance-status p {
+    font-size: 10px;
+    margin: 4px 0;
+  }
+}
+
+/* Extra-Small Phones (Device-based optimizations) */
+@media (max-hover: none) and (hover: none) {
+  .page-back-btn,
+  .submit-btn,
+  .edit-btn,
+  .modal-buttons button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .checkbox-label input,
+  .checkbox-label {
+    min-height: 44px;
+  }
+
+  .subject-card,
+  .attendance-card {
+    min-height: 60px;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .modal-overlay,
+  .modal-content,
+  .attendance-card,
+  .subject-card {
+    animation: none !important;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: more) {
+  .attendance-container,
+  .modal-content {
+    background: #0f0f1e;
+    border-color: #00ffff;
+  }
+
+  .header h2,
+  .attendance-card h4,
+  .subject-card h4,
+  .modal-content h2 {
+    color: #00ffff;
+    font-weight: 900;
+  }
+}
+
+/* Dark Mode Fallback */
+@media (prefers-color-scheme: dark) {
+  .attendance-container {
+    background-color: #0a0a14;
+  }
+
+  .header h2,
+  .attendance-card h4,
+  .subject-card h4 {
+    color: #00e6ff;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .page-back-btn,
+  .button-group,
+  .modal-overlay {
+    display: none;
+  }
+
+  .attendance-container {
+    margin-top: 0;
+    padding: 10px;
+  }
+
+  .attendance-grid,
+  .subjects-grid {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .attendance-card,
+  .subject-card {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    border: 1px solid #ccc;
+    box-shadow: none;
+  }
+
+  .header {
+    page-break-after: avoid;
+  }
+
+  @page {
+    margin: 0.5in;
+  }
+}
+
+/* Safe Area for Notched Devices */
+@supports (padding: max(0px)) {
+  .attendance-container {
+    padding-left: max(clamp(15px, 4vw, 35px), env(safe-area-inset-left));
+    padding-right: max(clamp(15px, 4vw, 35px), env(safe-area-inset-right));
+    padding-top: max(clamp(15px, 4vw, 35px), env(safe-area-inset-top));
+    padding-bottom: max(clamp(15px, 4vw, 35px), env(safe-area-inset-bottom));
+  }
+
+  .page-back-btn {
+    left: max(clamp(10px, 3vw, 25px), env(safe-area-inset-left));
+  }
+}
+
+/* High Resolution Displays (2560px+) */
+@media (min-width: 2560px) {
+  .attendance-container {
+    padding: 60px;
+    max-width: 2400px;
+  }
+
+  .header h2 {
+    font-size: 48px;
+    color: #00ffff;
+  }
+
+  .attendance-grid {
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 40px;
+  }
+
+  .attendance-card {
+    padding: 35px;
+  }
+
+  .modal-content {
+    min-width: 550px;
+    padding: 70px;
+  }
+}
+
+/* Accessibility - Focus Visible */
+.page-back-btn:focus-visible,
+.submit-btn:focus-visible,
+.edit-btn:focus-visible,
+.modal-buttons button:focus-visible,
+.checkbox-label input:focus-visible {
+  outline: 3px solid #00ffff;
+  outline-offset: 2px;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Text Selection */
+::selection {
+  background: rgba(0, 212, 255, 0.3);
+  color: #ffffff;
+}
+
+/* Performance optimizations */
+.modal-content,
+.attendance-card,
+.subject-card {
+  will-change: transform, opacity;
 }
